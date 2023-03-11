@@ -1,0 +1,68 @@
+﻿@model Student
+
+
+
+<form method="post" class="DeletePost" >
+
+    <div class="row pd-2">
+        <div class="border p-3 mt-4">
+            <h2 class=" text-primary">Delete Student</h2>
+            <hr />
+
+            <div asp-validation-summary="All"></div>
+
+            <div class="mb-3">
+                <label >Id</label>
+                <input asp-for="StudentID" class="form-control" />
+                <span asp-validation-for="StudentID" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label>First Name</label>
+                <input asp-for="StudentFName" class="form-control" />
+                <span asp-validation-for="StudentFName" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label>Last Name</label>
+                <input asp-for="StudentLName" class="form-control" />
+                <span asp-validation-for="StudentLName" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input asp-for="StudentEmail" class="form-control" />
+                <span asp-validation-for="StudentEmail" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label>Phone Number</label>
+                <input asp-for="StudentPhone" class="form-control" />
+                <span asp-validation-for="StudentPhone" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label>Birth_day</label>
+                <input asp-for="StudentBirth_day" class="form-control" />
+                <span asp-validation-for="StudentBirth_day" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label>Gender:</label>
+                <select asp-for="StudentGender" class="form-control">
+                    <option value="">Please select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <span asp-validation-for="StudentGender" class="text-danger"></span>
+
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+            <a asp-controller="Student" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                Back to list
+
+            </a>
+        </div>
+    </div>
+</form>

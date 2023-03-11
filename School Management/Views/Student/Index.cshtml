@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row pd-2">
+
+    <table class="table" style="100%">
+
+        <thead>
+            <tr>
+                <th>
+                    Student Id
+                </th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Birth Day
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="50%">
+                        @obj.StudentID
+                    </td>
+
+                    <td width="30%">
+                        @obj.StudentFName
+                    </td>
+                    <td width="50%">
+                        @obj.StudentLName
+                    </td>
+                    <td width="50%">
+                        @obj.StudentEmail
+                    </td>
+                    <td width="50%">
+                        @obj.StudentPhone
+                    </td>
+                    <td width="50%">
+                        @obj.StudentBirth_day
+                    </td>
+                    <td width="50%">
+                        @obj.StudentGender
+                    </td>
+
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Student" asp-action="Edit" asp-route-id="@obj.StudentID"
+                           class="btn btn-primary mx-2"><i class="bi bi-pencile-square"></i>Edit </a>
+                            <a asp-controller="Student" asp-action="Delete" asp-route-id="@obj.StudentID"
+                           class="btn btn-danger mx-2"><i class="bi bi-pencile-square"></i>Delete </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+    <a asp-action="Create" class="btn btn-primary" style="width:200px">Add New Student</a>
+
+</div>
